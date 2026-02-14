@@ -1,0 +1,15 @@
+---
+permalink: /
+eleventyExcludeFromCollections: true
+---
+
+{# IN PRODUCTION A PERMANENT 301 REDIRECT MUST BE SET #}
+
+{% if eleventy.env.runMode == "serve" %}
+  <meta http-equiv="refresh" content="0; url=/it/">
+{% else %}
+  <p>
+    This page is only used for local development.
+    In production, redirect is handled by the hosting.
+  </p>
+{% endif %}
