@@ -1,0 +1,16 @@
+<header>
+  <h1><a href="{{ "/" | locale_url }}">{{ translations[lang].siteTitle }}</a></h1>
+
+  <nav>
+    <a href="{{ "/" | locale_url }}">{{ translations[lang].home }}</a>
+    <a href="{{ "/articles/" | locale_url }}">{{ translations[lang].articles }}</a>
+  </nav>
+
+  <p>
+    <small>{{ translations[lang].language }}:</small>
+    {% set links = page.url | locale_links %}
+    {% for l in links %}
+      <a href="{{ l.url }}">{{ l.lang | upper }}</a>{% if not loop.last %} · {% endif %}
+    {% endfor %}
+  </p>
+</header>

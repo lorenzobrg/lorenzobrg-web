@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+title: Articoli
+lang: it
+---
+
+<h2>Articoli</h2>
+
+{% for post in collections.articles_it %}
+  <article>
+    <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+    <small>{{ post.date.toISOString().slice(0,10) }}</small>
+    <p>{{ post.data.description }}</p>
+  </article>
+{% endfor %}

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {% if title %}{{ title }} · {% endif %}{{ translations[lang].siteTitle }}
+    </title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+
+    {% for link in page.url | locale_links %}
+      <link rel="alternate" hreflang="{{ link.lang }}" href="{{ site.url }}{{ link.url }}">
+    {% endfor %}
+  </head>
+  <body>
+    {% include "partials/header.njk" %}
+    <main>
+      {{ content | safe }}
+    </main>
+    {% include "partials/footer.njk" %}
+  </body>
+</html>

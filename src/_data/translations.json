@@ -1,0 +1,16 @@
+{
+  "en": {
+    "siteTitle": "11ty-base",
+    "home": "Home",
+    "articles": "Articles",
+    "language": "Language",
+    "intro": "A tiny Eleventy base with i18n + RSS."
+  },
+  "it": {
+    "siteTitle": "11ty-base",
+    "home": "Home",
+    "articles": "Articoli",
+    "language": "Lingua",
+    "intro": "Una base Eleventy minuscola con i18n + RSS."
+  }
+}
