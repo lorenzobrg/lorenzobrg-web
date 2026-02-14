@@ -32,41 +32,39 @@
 {# --- STRUCTURED DATA (Schema.org) --- #}
 
 {% if page.url == ("/" | locale_url) %}
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": {{ siteTitle | dump }},
-            "url": "{{ site.url }}{{ "/" | locale_url }}"
-        }
-    </script>
+  {% set jsonld = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": siteTitle,
+    "url": site.url ~ ("/" | locale_url)
+  } %}
+  <script type="application/ld+json">{{ jsonld | dump | safe }}</script>
 
 {% elif isArticle and title %}
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "headline": {{ title | dump }},
-            "description": {{ metaDescription | dump }},
-            "inLanguage": {{ lang | dump }},
-            "datePublished": {{ date }},
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "{{ canonicalUrl }}"
-            },
-            "author": {
-                "@type": "Person",
-                "name": {{ site.author | dump }}
-            },
-            "publisher": {
-                "@type": "Organization",
-                "name": {{ site.name | dump }}
-            }
-        }
-    </script>
+  {% set jsonld = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "description": metaDescription,
+    "inLanguage": lang,
+    "datePublished": date,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    },
+    "author": {
+      "@type": "Person",
+      "name": site.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": site.name
+    }
+  } %}
+  <script type="application/ld+json">{{ jsonld | dump | safe }}</script>
 {% endif %}
 
 {% for link in page.url | locale_links %}
     <link rel="alternate" hreflang="{{ link.lang }}" href="{{ site.url }}{{ link.url }}">
 {% endfor %}
-<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ site.defaultlang }}">
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}/{{ site.defaultlang }}/">
