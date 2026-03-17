@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: locales
+  size: 1
+  alias: lang
+permalink: /{{ lang }}/
+eleventyComputed:
+  title: "{{ translations[lang].home }}"
+  description: "{{ translations[lang].homeDescription }}"
+---
+
+<p>{{ translations[lang].intro }}</p>
+
+<p>
+  RSS: <a href="/{{ lang }}/articles/feed.xml">/{{ lang }}/articles/feed.xml</a>
+</p>
