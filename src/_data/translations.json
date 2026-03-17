@@ -4,13 +4,17 @@
     "home": "Home",
     "articles": "Articles",
     "language": "Language",
-    "intro": "A tiny Eleventy base with i18n + RSS."
+    "intro": "A tiny Eleventy base with i18n + RSS.",
+    "homeDescription": "11ty-base is a minimal Eleventy starter with i18n (EN/IT) and RSS feeds, designed for clean, fast static sites.",
+    "articlesDescription": "Browse English articles from the 11ty-base demo."
   },
   "it": {
     "siteTitle": "11ty-base",
     "home": "Home",
     "articles": "Articoli",
     "language": "Lingua",
-    "intro": "Una base Eleventy minuscola con i18n + RSS."
+    "intro": "Una base Eleventy minuscola con i18n + RSS.",
+    "homeDescription": "11ty-base è un minimal setup per Eleventy con i18n (EN/IT) e RSS feeds, con un design semplice ed ottimizzato.",
+    "articlesDescription": "Sfoglia gli articoli in italiano del demo 11ty-base."
   }
 }
