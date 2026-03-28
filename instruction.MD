@@ -12,10 +12,6 @@ Technology Stack & Implementation
 
         File Extensions: All templates must use .njk (Nunjucks). Standard .html files are strictly forbidden.
 
-    Styling: Prioritize Tailwind CSS for all styling. Only use external CSS files if it is technically impossible to achieve the result with Tailwind utility classes.
-
-    Interactivity: Alpine.js is the mandatory framework for any client-side logic or interactivity.
-
     Semantic HTML: Use <img> tags for images. Do not wrap images in unnecessary <div> containers or use background images for content-heavy visuals unless specifically requested.
 
 Template Requirements (Front Matter)
