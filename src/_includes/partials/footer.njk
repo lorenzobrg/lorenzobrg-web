@@ -1,3 +1,14 @@
 <footer>
-  <small>© {{ site.name }} · <a href="{{ "/articles/feed.xml" | locale_url }}">RSS</a></small>
+  <p>
+    <small>{{ translations[lang].language }}:</small>
+    <span class="active">{{ lang | upper }}</span>
+    {% set links = page.url | locale_links %}
+    {% if links and links.length %} · {% endif %}
+    {% for l in links %}
+      <a href="{{ l.url }}">{{ l.lang | upper }}</a>{% if not loop.last %} · {% endif %}
+    {% endfor %}
+  </p>
+
+  <p class="copyright">© {{ site.author }} · <a href="{{ "/articles/feed.xml" | locale_url }}">RSS</a></p>
+  <p class="advertisement">Powered by <a href="https://www.11ty.dev/">Eleventy</a> and <a href="https://github.com/joeroe/risotto">risotto</a>.</p>
 </footer>

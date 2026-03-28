@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: locales
+  size: 1
+  alias: lang
+permalink: /{{ lang }}/publications/
+eleventyComputed:
+  title: "{{ translations[lang].publicationsTitle }}"
+  description: "{{ translations[lang].publicationsDescription }}"
+---
+
+<h1 id="publications">{{ translations[lang].publicationsTitle }}</h1>
+
+<p>{{ translations[lang].publicationsIntro }}</p>
+
+{% if lang == "en" %}
+  <p>I got closer to a <a href="https://aimagelab.unimore.it/">research lab</a> in Modena.</p>
+{% else %}
+  <p>Mi sono avvicinato ad un <a href="https://aimagelab.unimore.it/">laboratorio di ricerca</a> a Modena.</p>
+{% endif %}
+
+<ul>
+  {% for pub in publications %}
+    <li><a href="{{ pub.url }}">{{ pub.title[lang] }}</a> on {{ pub.date }}</li>
+  {% endfor %}
+</ul>

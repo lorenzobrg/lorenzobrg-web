@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/post.njk
 title: Secondo articolo
 description: Scopri come configurare i18n e RSS in Eleventy con un setup minimale, pronto da copiare in qualsiasi sito statico.
 date: 2026-02-11

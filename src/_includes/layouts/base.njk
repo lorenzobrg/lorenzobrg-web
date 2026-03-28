@@ -8,13 +8,40 @@
 
         {% include "partials/analytics.njk" %}
 
-        <link rel="stylesheet" href="/assets/styles.css"/>
+        {# risotto theme CSS (ported) #}
+        <link id="palette-stylesheet" rel="stylesheet" href="/assets/css/palettes/base16-dark.css"/>
+        <link rel="stylesheet" href="/assets/css/risotto.css"/>
+        <link rel="stylesheet" href="/assets/css/custom.css"/>
     </head>
     <body>
-        {% include "partials/header.njk" %}
-        <main>
-            {{ content | safe }}
-        </main>
-        {% include "partials/footer.njk" %}
+        <div class="page">
+            <header class="page__header">
+                {% include "partials/header.njk" %}
+            </header>
+
+            <section class="page__body">
+                {% block main %}
+                    {{ content | safe }}
+                {% endblock %}
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+                    {% include "partials/about.njk" %}
+                </div>
+                <hr>
+                <div class="aside__content">
+                    {% block aside %}
+                        {% if description %}<p>{{ description }}</p>{% endif %}
+                    {% endblock %}
+                </div>
+            </section>
+
+            <footer class="page__footer">
+                {% include "partials/footer.njk" %}
+            </footer>
+        </div>
+
+        <script src="/assets/theme.js" defer></script>
     </body>
 </html>

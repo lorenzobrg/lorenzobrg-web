@@ -1,7 +1,7 @@
 {
-  "name": "11ty-base",
-  "url": "https://11ty-base.lorenzostudio.info",
-  "author": "Lorenzo Studio",
-  "description": "11ty-base is a minimal Eleventy starter with i18n (EN/IT) and RSS feeds, designed for clean, fast static sites.",
+  "name": "Lorenzo Borghi",
+  "url": "https://www.lorenzoborghi.it",
+  "author": "Lorenzo Borghi",
+  "description": "Personal website of Lorenzo Borghi: projects, blog posts, and publications.",
   "defaultlang": "it"
 }

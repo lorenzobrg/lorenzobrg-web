@@ -1,0 +1,23 @@
+{% extends "layouts/base.njk" %}
+
+{% block main %}
+  <header class="content__header">
+    <h1>{{ title }}</h1>
+  </header>
+  <div class="content__body">
+    {{ content | safe }}
+  </div>
+  <footer class="content__footer"></footer>
+{% endblock %}
+
+{% block aside %}
+  {% if description %}<p>{{ description }}</p>{% endif %}
+
+  {% set postAuthor = author or site.author %}
+  {% if postAuthor or page.date %}
+    <p>
+      {% if postAuthor %}By {{ postAuthor }}{% if page.date %}, {% endif %}{% endif %}
+      {% if page.date %}{{ page.date.toISOString().slice(0,10) }}{% endif %}
+    </p>
+  {% endif %}
+{% endblock %}

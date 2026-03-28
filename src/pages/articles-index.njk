@@ -4,18 +4,18 @@ pagination:
   data: locales
   size: 1
   alias: lang
-permalink: /{{ lang }}/articles/
+permalink: /{{ lang }}/posts/
 eleventyComputed:
-  title: "{{ translations[lang].articles }}"
-  description: "{{ translations[lang].articlesDescription }}"
+  title: "{{ translations[lang].posts }}"
+  description: "{{ translations[lang].postsDescription }}"
 ---
 
-<h2>{{ translations[lang].articles }}</h2>
+<h1 id="{{ translations[lang].postsTitle | lower | replace(' ', '-') }}">{{ translations[lang].postsTitle }} <a href="/{{ lang }}/articles/feed.xml">RSS Feed</a></h1>
 
-{% for post in collections["articles_" + lang] %}
-  <article>
-    <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-    <small>{{ post.date.toISOString().slice(0,10) }}</small>
-    <p>{{ post.data.description }}</p>
-  </article>
-{% endfor %}
+<p>{{ translations[lang].postsIntro }}</p>
+
+<ul>
+  {% for post in collections["articles_" + lang] %}
+    <li><a href="{{ post.url }}">{{ post.data.title }}</a>{% if post.date %} on {{ post.date.toISOString().slice(0,10) }}{% endif %}</li>
+  {% endfor %}
+</ul>

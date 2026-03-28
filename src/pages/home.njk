@@ -10,8 +10,34 @@ eleventyComputed:
   description: "{{ translations[lang].homeDescription }}"
 ---
 
-<p>{{ translations[lang].intro }}</p>
+<h2>{{ translations[lang].homeAboutTitle }}</h2>
+
+<p>{{ translations[lang].aboutIntro }}</p>
 
 <p>
-  RSS: <a href="/{{ lang }}/articles/feed.xml">/{{ lang }}/articles/feed.xml</a>
+  {{ translations[lang].contactEmail }}: <a href="mailto:info@lorenzoborghi.it">info@lorenzoborghi.it</a>
 </p>
+
+<h2>{{ translations[lang].homeLatestPostsTitle }} <a href="/{{ lang }}/articles/feed.xml">RSS Feed</a></h2>
+
+<ul>
+  {% for post in collections["articles_" + lang] %}
+    {% if loop.index0 < 5 %}
+      <li><a href="{{ post.url }}">{{ post.data.title }}</a>{% if post.date %} on {{ post.date.toISOString().slice(0,10) }}{% endif %}</li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<p><a href="{{ "/posts/" | locale_url }}">{{ translations[lang].ctaAllPosts }}</a></p>
+
+<h2>{{ translations[lang].homeLatestPublicationsTitle }}</h2>
+
+<ul>
+  {% for pub in publications %}
+    {% if loop.index0 < 5 %}
+      <li><a href="{{ pub.url }}">{{ pub.title[lang] }}</a> on {{ pub.date }}</li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<p><a href="{{ "/publications/" | locale_url }}">{{ translations[lang].ctaAllPublications }}</a></p>

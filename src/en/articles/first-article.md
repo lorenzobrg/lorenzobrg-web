@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/post.njk
 title: First Article
 description: Learn how Eleventy handles i18n and RSS with a minimal setup you can copy into any static site.
 date: 2026-02-01

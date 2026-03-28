@@ -1,0 +1,22 @@
+/* Override this file to customise the theme's CSS for your site */
+
+/* Minimal theme toggle button (palette switcher) */
+.theme-toggle {
+	background: none;
+	border: 0;
+	padding: 0;
+	font: inherit;
+	text-transform: lowercase;
+	color: var(--link);
+	cursor: pointer;
+}
+
+.theme-toggle:hover,
+.theme-toggle:active {
+	color: var(--hover);
+}
+
+.theme-toggle:focus-visible {
+	outline: 2px solid var(--hover);
+	outline-offset: 0.25rem;
+}

@@ -1,0 +1,20 @@
+{% set about = profile.about[lang] %}
+
+{% if about %}
+<div class="aside__about">
+  {% if about.logo %}<span class="about__logo" role="img">{{ about.logo }}</span>&nbsp;{% endif %}
+  {% if about.logo_image %}<img class="about__logo" src="{{ about.logo_image }}" alt="{{ about.logo_alt or 'Logo' }}">{% endif %}
+  <h1 class="about__title">{{ about.title }}</h1>
+  {% if about.description %}<p class="about__description">{{ about.description }}</p>{% endif %}
+</div>
+{% endif %}
+
+{% if profile.socialLinks and profile.socialLinks.length %}
+<ul class="aside__social-links">
+  {% for item in profile.socialLinks %}
+  <li>
+    <a href="{{ item.url }}" rel="me" aria-label="{{ item.title }}" title="{{ item.title }}">{{ item.label or item.title }}</a>&nbsp;
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
