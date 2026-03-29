@@ -8,7 +8,7 @@
     "language": "Lang",
     "themeToggle": "Theme",
     "rssFeed": "RSS",
-    "homeDescription": "Lorenzo Borghi’s personal homepage with a short bio, contact details, social profiles, and the latest articles and research publications.",
+    "homeDescription": "Lorenzo Borghi is an IT Engineering student in Modena, Italy. Passionate about AI, computer vision, web technologies, and teaching.",
     "aboutDescription": "Bio, contacts, and links.",
     "postsDescription": "Blog posts and experiences.",
     "publicationsDescription": "Research publications and related notes.",
@@ -29,8 +29,8 @@
     "aboutHobbiesHtml": "I spend my free time in many ways. I sing and play the guitar, I play tennis, and I drive around my <a href=\"https://en.wikipedia.org/wiki/Mazda_MX-5\">Mazda MX-5 ND3</a>.",
     "contactPhone": "Phone",
     "contactEmail": "Email",
-    "ctaAllPosts": "All articles",
-    "ctaAllPublications": "All publications",
+    "ctaAllPosts": ">All articles",
+    "ctaAllPublications": "> All publications",
     "dateOn": "on"
   },
   "it": {
@@ -42,7 +42,7 @@
     "language": "Lang",
     "themeToggle": "Tema",
     "rssFeed": "RSS",
-    "homeDescription": "Homepage di Lorenzo Borghi con una breve bio, contatti, profili social e gli ultimi articoli e pubblicazioni di ricerca.",
+    "homeDescription": "Lorenzo Borghi è uno studente di ingegneria informatica a Modena, Italia. Appassionato di AI, computer vision, tecnologie web e didattica.",
     "aboutDescription": "Bio, contatti e link.",
     "postsDescription": "Articoli e esperienze dal blog.",
     "publicationsDescription": "Pubblicazioni di ricerca e note correlate.",
@@ -63,8 +63,8 @@
     "aboutHobbiesHtml": "Dedico il tempo libero a svariate passioni. Canto e suono la chitarra, gioco a tennis, e giro con la mia <a href=\"https://it.wikipedia.org/wiki/Mazda_MX-5\">Mazda MX-5 ND3</a>.",
     "contactPhone": "Cellulare",
     "contactEmail": "Email",
-    "ctaAllPosts": "Tutti gli articoli",
-    "ctaAllPublications": "Tutte le pubblicazioni",
+    "ctaAllPosts": "> Tutti gli articoli",
+    "ctaAllPublications": "> Tutte le pubblicazioni",
     "dateOn": "il"
   }
 }
