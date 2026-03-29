@@ -2,7 +2,7 @@
   <ul>
     <li class="nomarker">
       <h1 class="page__logo">
-        <a href="{{ "/" | locale_url }}" class="page__logo-inner">{{ translations[lang].siteTitle }}</a>
+        <a href="{{ "/" | locale_url }}" class="page__logo-inner">{{ site.handle }}</a>
       </h1>
     </li>
 
@@ -20,7 +20,7 @@
     </li>
 
     <li class="main-nav__item">
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="{{ translations[lang].themeToggle }}">
+      <button type="button" class="theme-toggle" id="theme-toggle" data-label="{{ translations[lang].themeToggle }}" aria-label="{{ translations[lang].themeToggle }}">
         {{ translations[lang].themeToggle }}
       </button>
     </li>

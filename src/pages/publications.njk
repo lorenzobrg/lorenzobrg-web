@@ -14,14 +14,9 @@ eleventyComputed:
 
 <p>{{ translations[lang].publicationsIntro }}</p>
 
-{% if lang == "en" %}
-  <p>I got closer to a <a href="https://aimagelab.unimore.it/">research lab</a> in Modena.</p>
-{% else %}
-  <p>Mi sono avvicinato ad un <a href="https://aimagelab.unimore.it/">laboratorio di ricerca</a> a Modena.</p>
-{% endif %}
-
 <ul>
-  {% for pub in publications %}
-    <li><a href="{{ pub.url }}">{{ pub.title[lang] }}</a> on {{ pub.date }}</li>
+  {% set pubs = collections["publications_" + lang] or [] %}
+  {% for pub in pubs %}
+    <li><a href="{{ pub.url }}">{{ pub.data.title }}</a>{% if pub.date %} {{ translations[lang].dateOn }} {{ pub.date.toISOString().slice(0,10) }}{% endif %}</li>
   {% endfor %}
 </ul>

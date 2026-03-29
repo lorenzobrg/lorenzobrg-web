@@ -4,40 +4,69 @@
       "logo_image": "/assets/images/frog.svg",
       "logo_alt": "Frog",
       "title": "Lorenzo Borghi",
-      "description": "IT engineering student. Interests: AI & computer vision, web technologies, teaching, and research."
+      "description": "Studente di Ingegneria informatica"
     },
     "it": {
       "logo_image": "/assets/images/frog.svg",
       "logo_alt": "Rana",
       "title": "Lorenzo Borghi",
-      "description": "Studente di ingegneria informatica. Interessi: AI e computer vision, tecnologie web, didattica e ricerca."
+      "description": "Studente di Ingegneria informatica"
     }
   },
-  "socialLinks": [
-    {
-      "title": "Email",
-      "label": "Email",
-      "url": "mailto:info@lorenzoborghi.it"
-    },
-    {
-      "title": "GitHub",
-      "label": "GitHub",
-      "url": "https://github.com/lorenzobrg"
-    },
-    {
-      "title": "Codeberg",
-      "label": "Codeberg",
-      "url": "https://codeberg.org/lorenzobrg"
-    },
-    {
-      "title": "ORCID",
-      "label": "ORCID",
-      "url": "https://orcid.org/0009-0000-9039-0134"
-    },
-    {
-      "title": "Download CV",
-      "label": "CV",
-      "url": "https://lorenzoborghi.it/assets/docs/cv_lorenzo_borghi.pdf"
-    }
-  ]
+  "socialLinks": {
+    "en": [
+      {
+        "title": "Email",
+        "icon": "mail",
+        "url": "mailto:info@lorenzoborghi.it"
+      },
+      {
+        "title": "GitHub",
+        "icon": "github",
+        "url": "https://github.com/lorenzobrg"
+      },
+      {
+        "title": "Codeberg",
+        "icon": "codeberg",
+        "url": "https://codeberg.org/lorenzobrg"
+      },
+      {
+        "title": "ORCID",
+        "icon": "orcid",
+        "url": "https://orcid.org/0009-0000-9039-0134"
+      },
+      {
+        "title": "Google Scholar",
+        "icon": "scholar",
+        "url": "https://scholar.google.com/citations?hl=en&user=Zc6ba8kAAAAJ"
+      }
+    ],
+    "it": [
+      {
+        "title": "Email",
+        "icon": "mail",
+        "url": "mailto:info@lorenzoborghi.it"
+      },
+      {
+        "title": "GitHub",
+        "icon": "github",
+        "url": "https://github.com/lorenzobrg"
+      },
+      {
+        "title": "Codeberg",
+        "icon": "codeberg",
+        "url": "https://codeberg.org/lorenzobrg"
+      },
+      {
+        "title": "ORCID",
+        "icon": "orcid",
+        "url": "https://orcid.org/0009-0000-9039-0134"
+      },
+      {
+        "title": "Google Scholar",
+        "icon": "scholar",
+        "url": "https://scholar.google.com/citations?hl=it&user=Zc6ba8kAAAAJ"
+      }
+    ]
+  }
 }

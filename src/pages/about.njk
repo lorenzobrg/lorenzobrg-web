@@ -14,24 +14,10 @@ eleventyComputed:
 
 <p>{{ translations[lang].aboutIntro }}</p>
 
-{% if lang == "en" %}
-  <p>I spend my free time in many ways. I sing and play the guitar, I play tennis and chess, and I drive around my <a href="https://en.wikipedia.org/wiki/Mazda_MX-5">Mazda MX-5 ND3</a>.</p>
-{% else %}
-  <p>Dedico il tempo libero a svariate passioni. Canto e suono la chitarra, gioco a tennis e scacchi, e giro con la mia <a href="https://it.wikipedia.org/wiki/Mazda_MX-5">Mazda MX-5 ND3</a>.</p>
-{% endif %}
+<p>{{ translations[lang].aboutHobbiesHtml | safe }}</p>
+
+<h2>{{ translations[lang].contactsTitle }}</h2>
 
 <p>
-  {{ translations[lang].contactPhone }}: <a href="tel:393519349061">+39 351 934 9061</a><br>
   {{ translations[lang].contactEmail }}: <a href="mailto:info@lorenzoborghi.it">info@lorenzoborghi.it</a>
 </p>
-
-<p>
-  <a href="{% if lang == 'it' %}https://lorenzoborghi.it/it/lezioni/{% else %}https://lorenzoborghi.it/lectures/{% endif %}">{{ translations[lang].ctaLecture }}</a>
-</p>
-
-<h2>Links</h2>
-<ul>
-  {% for item in profile.socialLinks %}
-    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-  {% endfor %}
-</ul>

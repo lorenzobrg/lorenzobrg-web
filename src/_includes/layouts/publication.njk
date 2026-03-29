@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+---
+
+<h1>{{ title }}</h1>
+
+{% if date %}
+  <p>{{ translations[lang].dateOn }} {{ date.toISOString().slice(0,10) }}</p>
+{% endif %}
+
+{{ content | safe }}
+
+{% if paper or posterPdf %}
+  <h2>{{ translations[lang].publicationsLinksTitle }}</h2>
+  <ul>
+    {% if paper %}
+      <li><a href="{{ paper }}" rel="noopener" target="_blank">{{ translations[lang].publicationPaper }}</a></li>
+    {% endif %}
+    {% if posterPdf %}
+      <li><a href="{{ posterPdf }}">{{ translations[lang].publicationPoster }}</a></li>
+    {% endif %}
+  </ul>
+{% endif %}

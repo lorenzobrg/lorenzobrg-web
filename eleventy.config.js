@@ -5,16 +5,24 @@ import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 const LOCALES = ["en", "it"];
 const FEED_META_BY_LOCALE = {
 	en: {
-		title: "11ty-base Articles (EN)",
-		subtitle: "Tiny demo feed for 11ty-base (English)."
+		title: "Lorenzo's Articles",
+		subtitle: "My projects and ideas."
 	},
 	it: {
-		title: "11ty-base Articoli (IT)",
-		subtitle: "Feed demo minimale per 11ty-base (Italiano)."
+		title: "Gli Articoli di Lorenzo",
+		subtitle: "I miei progetti e le mie idee."
 	}
 };
 
 export default async function (eleventyConfig) {
+	// Small utility filter: take first N items from an array (or first N chars from a string)
+	eleventyConfig.addFilter("take", (value, count) => {
+		const n = Number(count) || 0;
+		if (n <= 0) return [];
+		if (Array.isArray(value)) return value.slice(0, n);
+		if (typeof value === "string") return value.slice(0, n);
+		return [];
+	});
 
 	// Image Transform works independently, takes <img> on html and transforms automatically
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin);
@@ -35,13 +43,17 @@ export default async function (eleventyConfig) {
 				language: locale,
 				title: FEED_META_BY_LOCALE[locale].title,
 				subtitle: FEED_META_BY_LOCALE[locale].subtitle,
-				base: "https://example.com/",
-				author: { name: "11ty-base" }
+				base: "https://www.lorenzoborghi.it/",
+				author: { name: "Lorenzo Borghi" }
 			}
 		});
 
 		eleventyConfig.addCollection(`articles_${locale}`, (collectionApi) => {
 			return collectionApi.getFilteredByGlob(`src/${locale}/articles/*.md`).sort((a, b) => b.date - a.date);
+		});
+
+		eleventyConfig.addCollection(`publications_${locale}`, (collectionApi) => {
+			return collectionApi.getFilteredByGlob(`src/${locale}/publications/*.md`).sort((a, b) => b.date - a.date);
 		});
 	}
 
