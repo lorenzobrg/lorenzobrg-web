@@ -15,14 +15,6 @@ const FEED_META_BY_LOCALE = {
 };
 
 export default async function (eleventyConfig) {
-	// Small utility filter: take first N items from an array (or first N chars from a string)
-	eleventyConfig.addFilter("take", (value, count) => {
-		const n = Number(count) || 0;
-		if (n <= 0) return [];
-		if (Array.isArray(value)) return value.slice(0, n);
-		if (typeof value === "string") return value.slice(0, n);
-		return [];
-	});
 
 	// Image Transform works independently, takes <img> on html and transforms automatically
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin);
@@ -59,6 +51,7 @@ export default async function (eleventyConfig) {
 
 	// Passtrough
 	eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+	eleventyConfig.addPassthroughCopy({ "_redirects": "_redirects" });
 
 	return {
 		dir: {
