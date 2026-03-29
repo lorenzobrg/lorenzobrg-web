@@ -1,6 +1,6 @@
 ---
 layout: layouts/publication.njk
-title: "Bits2Bites: Intra-oral Occlusion Classification"
+title: "Bits2Bites: Intra-oral Scans Occlusal Classification"
 description: Dataset e benchmark per la classificazione dell'occlusione.
 date: 2025-08-06
 lang: it
@@ -11,4 +11,4 @@ permalink: /it/publications/bits2bites/
 
 Autori: Lorenzo Borghi, Luca Lumetti, Francesca Cremonini, Federico Rizzo, Costantino Grana, Luca Lombardo, Federico Bolelli.
 
-Bits2Bites è un piccolo dataset e benchmark multi-task per predire tratti occlusali a partire da scansioni intra-orali 3D grezze.
+Bits2Bites è un dataset di 200 scan e benchmark multi-task per predire tratti occlusali a partire da scansioni intra-orali 3D grezze.
