@@ -24,4 +24,9 @@
       {% endfor %}
     </ul>
   {% endif %}
+
+  <div class="theme-picker">
+    <label class="theme-picker__label" for="theme-picker">{{ translations[lang].themeToggle }}</label>
+    <select class="theme-picker__select" id="theme-picker" name="palette" aria-label="{{ translations[lang].themeToggle }}"></select>
+  </div>
 {% endif %}

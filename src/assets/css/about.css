@@ -22,6 +22,36 @@
     content: none;
 }
 
+.about__description {
+    margin-top: 0.5rem;
+}
+
+/* Theme picker (palette dropdown) */
+.theme-picker {
+    margin: 0.75rem 0 1.5rem;
+}
+
+.theme-picker__label {
+    display: block;
+    margin: 0 0 0.25rem;
+    text-transform: lowercase;
+    color: var(--muted);
+}
+
+.theme-picker__select {
+    width: 100%;
+    font: inherit;
+    background: var(--inner-bg);
+    color: var(--fg);
+    border: 1px solid var(--muted);
+    padding: 0.25rem 0.5rem;
+}
+
+.theme-picker__select:focus-visible {
+    outline: 2px solid var(--hover);
+    outline-offset: 0.25rem;
+}
+
 /* Social media links */
 .aside__social-links {
     list-style: none;

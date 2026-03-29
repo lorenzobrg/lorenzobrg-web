@@ -1,34 +1,15 @@
 <nav class="page__nav main-nav">
   <ul>
     <li class="nomarker">
-      {% if page.url == ("/" | locale_url) %}
-        <h1 class="page__logo">
-          <a href="{{ "/" | locale_url }}" class="page__logo-inner">{{ site.handle }}</a>
-        </h1>
-      {% else %}
-        <p class="page__logo">
-          <a href="{{ "/" | locale_url }}" class="page__logo-inner">{{ site.handle }}</a>
-        </p>
-      {% endif %}
-    </li>
-
-    <li class="main-nav__item">
-      <a class="nav-main-item{% if page.url == ("/" | locale_url) %} active{% endif %}" href="{{ "/" | locale_url }}" title="{{ translations[lang].home }}">{{ translations[lang].home }}</a>
+      <p class="page__logo">
+        <a href="{{ "/" | locale_url }}" class="page__logo-inner">{{ site.handle }}</a>
+      </p>
     </li>
     <li class="main-nav__item">
       <a class="nav-main-item{% if ("/posts/" in page.url) or ("/articles/" in page.url) %} active{% endif %}" href="{{ "/posts/" | locale_url }}" title="{{ translations[lang].posts }}">{{ translations[lang].posts }}</a>
     </li>
     <li class="main-nav__item">
       <a class="nav-main-item{% if "/publications/" in page.url %} active{% endif %}" href="{{ "/publications/" | locale_url }}" title="{{ translations[lang].publications }}">{{ translations[lang].publications }}</a>
-    </li>
-    <li class="main-nav__item">
-      <a class="nav-main-item{% if "/about/" in page.url %} active{% endif %}" href="{{ "/about/" | locale_url }}" title="{{ translations[lang].about }}">{{ translations[lang].about }}</a>
-    </li>
-
-    <li class="main-nav__item">
-      <button type="button" class="theme-toggle" id="theme-toggle" data-label="{{ translations[lang].themeToggle }}" aria-label="{{ translations[lang].themeToggle }}">
-        {{ translations[lang].themeToggle }}
-      </button>
     </li>
   </ul>
 </nav>

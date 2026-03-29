@@ -10,7 +10,8 @@ eleventyComputed:
   description: "{{ translations[lang].homeDescription }}"
 ---
 
-<h2>{{ translations[lang].homeAboutTitle }}</h2>
+{% set homeTitle = (profile.about[lang] and profile.about[lang].title) or site.handle %}
+<h1>{{ homeTitle }}</h1>
 
 <p>{{ translations[lang].aboutIntro }}</p>
 
