@@ -26,11 +26,11 @@
                 {% include "partials/header.njk" %}
             </header>
 
-            <section class="page__body">
+            <main class="page__body">
                 {% block main %}
                     {{ content | safe }}
                 {% endblock %}
-            </section>
+            </main>
 
             <section class="page__aside">
                 <div class="aside__about">

@@ -1,9 +1,15 @@
 <nav class="page__nav main-nav">
   <ul>
     <li class="nomarker">
-      <h1 class="page__logo">
-        <a href="{{ "/" | locale_url }}" class="page__logo-inner">{{ site.handle }}</a>
-      </h1>
+      {% if page.url == ("/" | locale_url) %}
+        <h1 class="page__logo">
+          <a href="{{ "/" | locale_url }}" class="page__logo-inner">{{ site.handle }}</a>
+        </h1>
+      {% else %}
+        <p class="page__logo">
+          <a href="{{ "/" | locale_url }}" class="page__logo-inner">{{ site.handle }}</a>
+        </p>
+      {% endif %}
     </li>
 
     <li class="main-nav__item">
