@@ -12,3 +12,5 @@ permalink: /it/publications/bits2bites/
 Autori: Lorenzo Borghi, Luca Lumetti, Francesca Cremonini, Federico Rizzo, Costantino Grana, Luca Lombardo, Federico Bolelli.
 
 Bits2Bites è un dataset di 200 scan e benchmark multi-task per predire tratti occlusali a partire da scansioni intra-orali 3D grezze.
+
+Inviato a: Oral and Dental Image Analysis - ODIN, MICCAI Workshop, Sep 2025
