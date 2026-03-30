@@ -1,5 +1,5 @@
 (() => {
-  const paletteLink = document.getElementById("palette-stylesheet");
+  let paletteLink = document.getElementById("palette-stylesheet");
   if (!paletteLink) return;
 
   const STORAGE_KEY = "risotto-palette";
@@ -59,17 +59,71 @@
     }
   };
 
-  const setPalette = (palette) => {
-    paletteLink.setAttribute("href", hrefFor(palette));
-    document.documentElement.dataset.palette = palette;
-    safeSet(STORAGE_KEY, palette);
-    updateUi(palette);
+  const paletteFromHref = (href) => {
+    const match = (href || "").match(/\/palettes\/(.+?)\.css$/);
+    return match?.[1] || null;
   };
 
   const getCurrentPalette = () => {
-    const href = paletteLink.getAttribute("href") || "";
-    const match = href.match(/\/palettes\/(.+?)\.css$/);
-    return match?.[1] || PALETTES[0];
+    const link = document.getElementById("palette-stylesheet");
+    if (!link) return PALETTES[0];
+    const href = link.getAttribute("href") || "";
+    return paletteFromHref(href) || PALETTES[0];
+  };
+
+  const setPalette = (palette) => {
+    if (!PALETTES.includes(palette)) return;
+
+    const currentLink = document.getElementById("palette-stylesheet");
+    if (!currentLink) return;
+
+    const pending = document.getElementById("palette-stylesheet-next");
+    if (pending) pending.remove();
+
+    const currentPalette = paletteFromHref(currentLink.getAttribute("href")) || PALETTES[0];
+    if (currentPalette === palette) {
+      document.documentElement.dataset.palette = palette;
+      safeSet(STORAGE_KEY, palette);
+      updateUi(palette);
+      return;
+    }
+
+    const nextHref = hrefFor(palette);
+    const nextLink = document.createElement("link");
+    nextLink.rel = "stylesheet";
+    nextLink.href = nextHref;
+    nextLink.id = "palette-stylesheet-next";
+    currentLink.insertAdjacentElement("afterend", nextLink);
+
+    // Persist intent immediately so navigation keeps the chosen theme.
+    safeSet(STORAGE_KEY, palette);
+    updateUi(palette);
+
+    nextLink.addEventListener(
+      "load",
+      () => {
+        document.documentElement.dataset.palette = palette;
+
+        // Swap only after the new CSS is ready to avoid flashes.
+        currentLink.remove();
+        nextLink.id = "palette-stylesheet";
+        paletteLink = nextLink;
+      },
+      { once: true }
+    );
+
+    nextLink.addEventListener(
+      "error",
+      () => {
+        nextLink.remove();
+        // Fall back: keep the current stylesheet and revert UI state.
+        const fallback = getCurrentPalette();
+        document.documentElement.dataset.palette = fallback;
+        safeSet(STORAGE_KEY, fallback);
+        updateUi(fallback);
+      },
+      { once: true }
+    );
   };
 
   const saved = safeGet(STORAGE_KEY);

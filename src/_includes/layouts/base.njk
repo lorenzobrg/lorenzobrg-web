@@ -15,7 +15,11 @@
         {% include "partials/analytics.njk" %}
 
         {# risotto theme CSS (ported) #}
-        <link id="palette-stylesheet" rel="stylesheet" href="/assets/css/palettes/base16-dark.css"/>
+        {# Prevent theme "white flash" (FOUC) on navigation #}
+        <script src="/assets/js/theme-init.js"></script>
+        <noscript>
+            <link id="palette-stylesheet" rel="stylesheet" href="/assets/css/palettes/base16-dark.css"/>
+        </noscript>
         <link rel="stylesheet" href="/assets/css/risotto.css"/>
         <link rel="stylesheet" href="/assets/css/custom.css"/>
         <link rel="stylesheet" href="/assets/css/about.css"/>
@@ -49,6 +53,6 @@
             </footer>
         </div>
 
-        <script src="/assets/theme.js" defer></script>
+        <script src="/assets/js/theme.js" defer></script>
     </body>
 </html>
